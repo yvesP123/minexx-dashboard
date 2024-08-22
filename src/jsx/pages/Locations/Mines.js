@@ -83,10 +83,15 @@ const Mines = () => {
                                             <Col xs={12} sm={6} md={4} lg={3} key={supplier?.id} className="mb-3">
                                                 <Accordion className="accordion accordion-rounded-stylish accordion-bordered">
                                                     <Accordion.Item className="accordion-item" eventKey={supplier?.id}>
-                                                        <Accordion.Header className="accordion-header rounded-lg">
-                                                            <span className='text-primary'>{supplier?.name}</span>
-                                                            &emsp;<span className='badge badge-primary'>{mines.filter(single => single.company === supplier.id).length}</span>
-                                                        </Accordion.Header>
+                                                    <Accordion.Header className="accordion-header rounded-lg d-flex justify-content-between align-items-center">
+    <div className="d-flex align-items-center" style={{ marginRight: '10px' }}>
+    <span className='text-primary'>
+                                                                    {supplier?.name} <span className='badge badge-primary ml-2'>{mines.filter(single => single.company === supplier.id).length}</span>
+                                                                </span>
+    </div>
+</Accordion.Header>
+
+
                                                         <Accordion.Collapse id={supplier?.id} eventKey={supplier?.id}>
                                                             <div className="accordion-body">
                                                                 {mines.filter(single => single.company === supplier.id).length === 0 ? <div className='pa-5 text-center'>There are no mine sites associated with {supplier.name}</div>
