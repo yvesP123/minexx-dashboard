@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {dezThemeSet} from './ThemeDemo';
-import { authUser } from "../config";
+
 
 export const ThemeContext = createContext();
 
@@ -310,5 +310,4 @@ const ThemeContextProvider = (props) => {
 };
 
 export default ThemeContextProvider;
-
 
